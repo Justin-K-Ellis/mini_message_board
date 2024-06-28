@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output_styles.css" />
+    <title>MMB</title>
+    </style>
+  </head>
+  <body>
+    <div id="outer-container" class="w-11/12 md:w-1/2 mx-auto">
+      <header class="py-2 flex justify-between">
+        <div id="title-section">
+          <h1 class="text-cyan-800 text-4xl font-bold">MMB</h1>
+          <p class="text-cyan-600 text-xl">The Mini Message Board</p>
+        </div>
+        <button class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-md shadow hover:shadow-md">
+          <a href="/new">New Post</a>
+        </button>
+      </header>
+      <hr>
+
+      <main>
+        <div>
+          <% if (messages.length > 0) { %> <% messages.forEach(message => { %>
+          <div class="shadow hover:shadow-md my-2 rounded p-2">
+            <p class="font-bold"><%= message.user %></p>
+            <p class="text-justify"><%= message.text %></p>
+            <p class="text-slate-500"><%= message.added %></p>
+          </div>
+          <% }) %> <% } %>
+        </div>
+      </main>
+      <hr>
+      <footer class="mx-auto py-8 md:py-12">
+        <p class="text-center text-cyan-600">2024, Justin Klitgaard</p>
+      </footer>
+      
+    </div>
+  </body>
+</html>

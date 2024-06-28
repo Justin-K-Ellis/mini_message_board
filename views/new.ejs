@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output_styles.css" />
+    <title>MMB - New Post</title>
+  </head>
+  <body>
+    <div id="outer-container" class="w-11/12 md:w-1/2 mx-auto">
+      <header class="py-2 flex justify-between">
+        <div id="title-section">
+          <a href="/">
+            <h1 class="text-cyan-800 text-4xl font-bold">MMB</h1>
+          </a>
+          <p class="text-cyan-600 text-xl">New Post</p>
+        </div>
+      </header>
+      <hr />
+      <form method="POST" action="/new">
+        <div class="flex flex-col gap-2 mt-2">
+          <div id="name-group" class="flex justify-between align-center">
+            <label for="user_name">Name</label>
+            <input
+              type="text"
+              id="user_name"
+              name="user_name"
+              class="border-2 border-solid border-cyan-800 rounded w-3/4"
+              required
+            />
+          </div>
+          <div id="message-group" class="flex justify-between align-center">
+            <label for="user_post">Message</label>
+            <textarea
+              name="user_post"
+              id="user_post"
+              class="border-2 border-solid border-cyan-800 rounded w-3/4"
+              required
+            ></textarea>
+          </div>
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="bg-cyan-500 hover:bg-cyan-600 text-white p-2 rounded-md shadow hover:shadow-md"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
