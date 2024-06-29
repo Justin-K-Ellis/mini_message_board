@@ -18,8 +18,4 @@ router.post("/new", (req, res) => {
   res.redirect("/");
 });
 
-router.get("/cats", (req, res) => {
-  res.render("cats", { cats: cats });
-});
-
 module.exports = router;
