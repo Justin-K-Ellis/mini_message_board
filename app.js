@@ -3,7 +3,6 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 8000;
 const router = require("./router.js");
-const exp = require("constants");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
