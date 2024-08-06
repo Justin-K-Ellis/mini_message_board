@@ -1,21 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const cleanDate = require("./modules/clean_date.js");
-const messages = require("./db.js");
+const controller = require("./controllers/controller.js");
 
-router.get("/", (req, res) => {
-  res.render("index", { messages });
-});
-
-router.get("/new", (req, res) => {
-  res.render("new");
-});
-
-router.post("/new", (req, res) => {
-  const userName = req.body.user_name;
-  const userPost = req.body.user_post;
-  messages.push({ text: userPost, user: userName, added: cleanDate() });
-  res.redirect("/");
-});
+router.get("/", controller.getMessages);
+router.get("/new", controller.getNewMessage);
+router.post("/new", controller.postMessage);
+router.put("/upvote", controller.upVote);
+router.post("/delete/:id", controller.deletePost);
 
 module.exports = router;

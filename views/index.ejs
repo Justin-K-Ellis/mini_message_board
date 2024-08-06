@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./output_styles.css" />
+    <script src="./script.js" defer></script>
     <title>MMB</title>
     </style>
   </head>
@@ -21,11 +22,15 @@
 
       <main>
         <div>
-          <% if (messages.length > 0) { %> <% messages.forEach(message => { %>
+          <% if (posts.length > 0) { %> <% posts.forEach(post => { %>
           <div class="shadow hover:shadow-md my-2 rounded p-2">
-            <p class="font-bold"><%= message.user %></p>
-            <p class="text-justify"><%= message.text %></p>
-            <p class="text-slate-500"><%= message.added %></p>
+            <p class="font-bold"><%= post.user_name %></p>
+            <p class="text-justify"><%= post.user_post %></p>
+            <p class="text-cyan-600">Likes: <%= post.likes %></p>
+            <form action="/delete/<%= post.id %>" method="POST">
+              <button type="submit" id="delete" class="text-red-500">DELETE</button>
+            </form>
+            <p class="text-slate-500"><%= post.date %></p>
           </div>
           <% }) %> <% } %>
         </div>

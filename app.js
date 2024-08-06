@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const cors = require("cors");
 const port = process.env.PORT || 8000;
 const router = require("./router.js");
 
@@ -8,6 +9,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(express.static(__dirname + "/public"));
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 
